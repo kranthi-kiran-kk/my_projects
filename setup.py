@@ -24,7 +24,7 @@ def ger_requirements_list() -> List[str]:
         return requirement_list
     
 
-    setup(
+setup(
         name =PROJECT_NAME,
         version=VERSION,
         author=AUTHOR,
@@ -32,4 +32,4 @@ def ger_requirements_list() -> List[str]:
         packages=find_packages(),
         install_requires=ger_requirements_list()
 
-    )
+    ) 

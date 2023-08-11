@@ -1,0 +1,7 @@
+venv-ml/
+*.egg-info/
+.vscode
+build/
+develop-eggs/
+dist/
+secrets.txt
