@@ -5,3 +5,5 @@ build/
 develop-eggs/
 dist/
 secrets.txt
+housing_logs/
+__pycache__/
