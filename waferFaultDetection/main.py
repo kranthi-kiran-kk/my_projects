@@ -3,8 +3,8 @@ from flask import Flask, request, render_template
 from flask import Response
 import os
 from flask_cors import CORS, cross_origin
-from prediction_Validation_Insertion import pred_validation
-from trainingModel import trainModel
+from prediction_Validation_Insertion import predValidation
+from training_model_module import trainModel
 from training_Validation_Insertion import train_validation
 import flask_monitoringdashboard as dashboard
 from predictFromModel import prediction
@@ -23,61 +23,69 @@ CORS(app)
 def home():
     return render_template('index.html')
 
+
 @app.route("/predict", methods=['POST'])
 @cross_origin()
-def predictRouteClient():
+def predict_route_client():
     try:
         if request.json is not None:
             path = request.json['filepath']
 
-            pred_val = pred_validation(path) #object initialization
+            # object initialization
+            pred_val = predValidation(path)
 
-            pred_val.prediction_validation() #calling the prediction_validation function
+            # calling the prediction_validation function
+            pred_val.prediction_validation()
 
-            pred = prediction(path) #object initialization
+            # object initialization
+            pred = prediction(path)
 
             # predicting for dataset present in database
-            path,json_predictions = pred.predictionFromModel()
-            return Response("Prediction File created at !!!"  +str(path) +'and few of the predictions are '+str(json.loads(json_predictions) ))
+            path, json_predictions = pred.predictionFromModel()
+            return Response(f"Prediction File created at !!! {str(path)} and few of the predictions are {str(json.loads(json_predictions))}")
         elif request.form is not None:
             path = request.form['filepath']
 
-            pred_val = pred_validation(path) #object initialization
+            # object initialization
+            pred_val = predValidation(path)
 
-            pred_val.prediction_validation() #calling the prediction_validation function
+            # calling the prediction_validation function
+            pred_val.prediction_validation()
 
-            pred = prediction(path) #object initialization
+            # object initialization
+            pred = prediction(path)
 
             # predicting for dataset present in database
-            path,json_predictions = pred.predictionFromModel()
-            return Response("Prediction File created at !!!"  +str(path) +'and few of the predictions are '+str(json.loads(json_predictions) ))
+            path, json_predictions = pred.predictionFromModel()
+            return Response(f"Prediction File created at !!! {str(path)} and few of the predictions are {str(json.loads(json_predictions))}")
         else:
             print('Nothing Matched')
     except ValueError:
-        return Response("Error Occurred! %s" %ValueError)
+        return Response("Error Occurred! %s" % ValueError)
     except KeyError:
-        return Response("Error Occurred! %s" %KeyError)
-    except Exception as e:
-        return Response("Error Occurred! %s" %e)
-
+        return Response("Error Occurred! %s" % KeyError)
+    except Exception as ex:
+        return Response("Error Occurred! %s" % ex)
 
 
 @app.route("/train", methods=['POST'])
 @cross_origin()
-def trainRouteClient():
+def train_route_client():
 
     try:
         if request.json['folderPath'] is not None:
             path = request.json['folderPath']
+            # object initialization
+            train_val_obj = train_validation(path)
 
-            train_valObj = train_validation(path) #object initialization
+            # calling the training_validation function
+            train_val_obj.train_validation()
 
-            train_valObj.train_validation()#calling the training_validation function
+            # object initialization
+            train_model_obj = trainModel()
 
-
-            trainModelObj = trainModel() #object initialization
-            trainModelObj.trainingModel() #training the model for the files in the table
-
+            # training the model for the files in the table
+            train_model_obj.training_model()
 
     except ValueError:
 
@@ -90,12 +98,13 @@ def trainRouteClient():
     except Exception as e:
 
         return Response("Error Occurred! %s" % e)
-    return Response("Training successfull!!")
+    return Response("Training successful!!")
 
-port = int(os.getenv("PORT",5000))
+
+port = int(os.getenv("PORT", 5000))
 if __name__ == "__main__":
     host = '0.0.0.0'
-    #port = 5000
     httpd = simple_server.make_server(host, port, app)
-    # print("Serving on %s %d" % (host, port))
+    print("Serving on %s %d" % (host, port))
+    # http://localhost:5000
     httpd.serve_forever()

@@ -4,8 +4,9 @@ from DataTypeValidation_Insertion_Prediction.DataTypeValidationPrediction import
 from DataTransformation_Prediction.DataTransformationPrediction import dataTransformPredict
 from application_logging import logger
 
-class pred_validation:
-    def __init__(self,path):
+
+class predValidation:
+    def __init__(self, path):
         self.raw_data = Prediction_Data_validation(path)
         self.dataTransform = dataTransformPredict()
         self.dBOperation = dBOperation()
@@ -18,9 +19,9 @@ class pred_validation:
 
             self.log_writer.log(self.file_object,'Start of Validation on files for prediction!!')
             #extracting values from prediction schema
-            LengthOfDateStampInFile,LengthOfTimeStampInFile,column_names,noofcolumns = self.raw_data.valuesFromSchema()
+            LengthOfDateStampInFile,LengthOfTimeStampInFile,column_names,noofcolumns = self.raw_data.values_from_schema()
             #getting the regex defined to validate filename
-            regex = self.raw_data.manualRegexCreation()
+            regex = self.raw_data.manual_regex_creation()
             #validating filename of prediction files
             self.raw_data.validationFileNameRaw(regex,LengthOfDateStampInFile,LengthOfTimeStampInFile)
             #validating column length in the file

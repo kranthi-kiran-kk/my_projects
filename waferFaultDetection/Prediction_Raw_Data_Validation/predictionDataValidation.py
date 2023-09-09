@@ -9,9 +9,6 @@ import pandas as pd
 from application_logging.logger import App_Logger
 
 
-
-
-
 class Prediction_Data_validation:
     """
                This class shall be used for handling all the validation done on the Raw Prediction Data!!.
@@ -22,24 +19,23 @@ class Prediction_Data_validation:
 
                """
 
-    def __init__(self,path):
-        self.Batch_Directory = path
+    def __init__(self, path):
+        self.batch_directory = path
         self.schema_path = 'schema_prediction.json'
         self.logger = App_Logger()
 
-
-    def valuesFromSchema(self):
+    def values_from_schema(self):
         """
-                                Method Name: valuesFromSchema
-                                Description: This method extracts all the relevant information from the pre-defined "Schema" file.
-                                Output: LengthOfDateStampInFile, LengthOfTimeStampInFile, column_names, Number of Columns
-                                On Failure: Raise ValueError,KeyError,Exception
+        Method Name: values_from_schema
+        Description: This method extracts all the relevant information from the pre-defined "Schema" file.
+        Output: LengthOfDateStampInFile, LengthOfTimeStampInFile, column_names, Number of Columns
+        On Failure: Raise ValueError,KeyError,Exception
 
-                                 Written By: iNeuron Intelligence
-                                Version: 1.0
-                                Revisions: None
+         Written By: iNeuron Intelligence
+        Version: 1.0
+        Revisions: None
 
-                                        """
+        """
         try:
             with open(self.schema_path, 'r') as f:
                 dic = json.load(f)
@@ -52,15 +48,13 @@ class Prediction_Data_validation:
 
             file = open("Training_Logs/valuesfromSchemaValidationLog.txt", 'a+')
             message ="LengthOfDateStampInFile:: %s" %LengthOfDateStampInFile + "\t" + "LengthOfTimeStampInFile:: %s" % LengthOfTimeStampInFile +"\t " + "NumberofColumns:: %s" % NumberofColumns + "\n"
-            self.logger.log(file,message)
+            self.logger.log(file, message)
 
             file.close()
 
-
-
         except ValueError:
             file = open("Prediction_Logs/valuesfromSchemaValidationLog.txt", 'a+')
-            self.logger.log(file,"ValueError:Value not found inside schema_training.json")
+            self.logger.log(file, "ValueError:Value not found inside schema_training.json")
             file.close()
             raise ValueError
 
@@ -78,39 +72,38 @@ class Prediction_Data_validation:
 
         return LengthOfDateStampInFile, LengthOfTimeStampInFile, column_names, NumberofColumns
 
-
-    def manualRegexCreation(self):
+    def manual_regex_creation(self):
 
         """
-                                      Method Name: manualRegexCreation
-                                      Description: This method contains a manually defined regex based on the "FileName" given in "Schema" file.
-                                                  This Regex is used to validate the filename of the prediction data.
-                                      Output: Regex pattern
-                                      On Failure: None
+      Method Name: manual_regex_creation
+      Description: This method contains a manually defined regex based on the "FileName" given in "Schema" file.
+                  This Regex is used to validate the filename of the prediction data.
+      Output: Regex pattern
+      On Failure: None
 
-                                       Written By: iNeuron Intelligence
-                                      Version: 1.0
-                                      Revisions: None
+       Written By: iNeuron Intelligence
+      Version: 1.0
+      Revisions: None
 
-                                              """
+              """
         regex = "['wafer']+['\_'']+[\d_]+[\d]+\.csv"
         return regex
 
-    def createDirectoryForGoodBadRawData(self):
+    def create_directory_for_good_bad_raw_data(self):
 
         """
-                                        Method Name: createDirectoryForGoodBadRawData
-                                        Description: This method creates directories to store the Good Data and Bad Data
-                                                      after validating the prediction data.
+        Method Name: create_directory_for_good_bad_raw_data
+        Description: This method creates directories to store the Good Data and Bad Data
+                      after validating the prediction data.
 
-                                        Output: None
-                                        On Failure: OSError
+        Output: None
+        On Failure: OSError
 
-                                         Written By: iNeuron Intelligence
-                                        Version: 1.0
-                                        Revisions: None
+         Written By: iNeuron Intelligence
+        Version: 1.0
+        Revisions: None
 
-                                                """
+        """
         try:
             path = os.path.join("Prediction_Raw_Files_Validated/", "Good_Raw/")
             if not os.path.isdir(path):
@@ -245,8 +238,8 @@ class Prediction_Data_validation:
         # delete the directories for good and bad data in case last run was unsuccessful and folders were not deleted.
         self.deleteExistingBadDataTrainingFolder()
         self.deleteExistingGoodDataTrainingFolder()
-        self.createDirectoryForGoodBadRawData()
-        onlyfiles = [f for f in listdir(self.Batch_Directory)]
+        self.create_directory_for_good_bad_raw_data()
+        onlyfiles = [f for f in listdir(self.batch_directory)]
         try:
             f = open("Prediction_Logs/nameValidationLog.txt", 'a+')
             for filename in onlyfiles:

@@ -31,7 +31,7 @@ class Raw_Data_validation:
 
     def valuesFromSchema(self):
         """
-                        Method Name: valuesFromSchema
+                        Method Name: values_from_schema
                         Description: This method extracts all the relevant information from the pre-defined "Schema" file.
                         Output: LengthOfDateStampInFile, LengthOfTimeStampInFile, column_names, Number of Columns
                         On Failure: Raise ValueError,KeyError,Exception
@@ -82,7 +82,7 @@ class Raw_Data_validation:
 
     def manualRegexCreation(self):
         """
-                                Method Name: manualRegexCreation
+                                Method Name: manual_regex_creation
                                 Description: This method contains a manually defined regex based on the "FileName" given in "Schema" file.
                                             This Regex is used to validate the filename of the training data.
                                 Output: Regex pattern
@@ -99,7 +99,7 @@ class Raw_Data_validation:
     def createDirectoryForGoodBadRawData(self):
 
         """
-                                      Method Name: createDirectoryForGoodBadRawData
+                                      Method Name: create_directory_for_good_bad_raw_data
                                       Description: This method creates directories to store the Good Data and Bad Data
                                                     after validating the training data.
 
