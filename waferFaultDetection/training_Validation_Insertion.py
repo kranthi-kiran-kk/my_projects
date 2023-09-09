@@ -1,13 +1,13 @@
 from datetime import datetime
 from Training_Raw_data_validation.rawValidation import Raw_Data_validation
 from DataTypeValidation_Insertion_Training.DataTypeValidation import dBOperation
-from DataTransform_Training.DataTransformation import dataTransform
+from DataTransform_Training.DataTransformation import DataTransform
 from application_logging import logger
 
 class train_validation:
     def __init__(self,path):
         self.raw_data = Raw_Data_validation(path)
-        self.dataTransform = dataTransform()
+        self.dataTransform = DataTransform()
         self.dBOperation = dBOperation()
         self.file_object = open("Training_Logs/Training_Main_Log.txt", 'a+')
         self.log_writer = logger.App_Logger()
@@ -29,7 +29,7 @@ class train_validation:
 
             self.log_writer.log(self.file_object, "Starting Data Transforamtion!!")
             # replacing blanks in the csv file with "Null" values to insert in table
-            self.dataTransform.replaceMissingWithNull()
+            self.dataTransform.replace_missing_with_null()
 
             self.log_writer.log(self.file_object, "DataTransformation Completed!!!")
 

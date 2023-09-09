@@ -23,7 +23,7 @@ class dataTransformPredict:
      def replaceMissingWithNull(self):
 
           """
-                                  Method Name: replaceMissingWithNull
+                                  Method Name: replace_missing_with_null
                                   Description: This method replaces the missing values in columns with "NULL" to
                                                store in the table. We are using substring in the first column to
                                                keep only "Integer" data for ease up the loading.
