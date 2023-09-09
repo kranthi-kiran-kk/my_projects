@@ -26,7 +26,7 @@ class dBOperation:
     def dataBaseConnection(self,DatabaseName):
 
         """
-                Method Name: dataBaseConnection
+                Method Name: data_base_connection
                 Description: This method creates the database with the given name and if Database already exists then opens the connection to the DB.
                 Output: Connection to the DB
                 On Failure: Raise ConnectionError
@@ -83,7 +83,7 @@ class dBOperation:
                     #in try block we check if the table exists, if yes then add columns to the table
                     # else in catch block we will create the table
                     try:
-                        #cur = cur.execute("SELECT name FROM {dbName} WHERE type='table' AND name='Good_Raw_Data'".format(dbName=DatabaseName))
+                        #cur = cur.execute("SELECT name FROM {dbName} WHERE type='table' AND name='Good_Raw_Data'".format(dbName=database_name))
                         conn.execute('ALTER TABLE Good_Raw_Data ADD COLUMN "{column_name}" {dataType}'.format(column_name=key,dataType=type))
                     except:
                         conn.execute('CREATE TABLE  Good_Raw_Data ({column_name} {dataType})'.format(column_name=key, dataType=type))

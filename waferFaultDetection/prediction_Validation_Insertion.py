@@ -32,7 +32,7 @@ class predValidation:
 
             self.log_writer.log(self.file_object,("Starting Data Transforamtion!!"))
             #replacing blanks in the csv file with "Null" values to insert in table
-            self.dataTransform.replaceMissingWithNull()
+            self.dataTransform.replace_missing_with_null()
 
             self.log_writer.log(self.file_object,"DataTransformation Completed!!!")
 

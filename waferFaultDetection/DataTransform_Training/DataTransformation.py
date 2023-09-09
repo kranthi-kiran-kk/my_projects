@@ -36,4 +36,5 @@ class DataTransform:
         except Exception as ex:
             self.logger.log(log_file, "Data Transformation failed because:: %s" % ex)
             log_file.close()
+            raise ex
         log_file.close()
