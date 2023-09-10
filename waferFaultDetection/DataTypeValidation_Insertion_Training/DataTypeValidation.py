@@ -27,7 +27,7 @@ class dBOperation:
 
         """
                 Method Name: data_base_connection
-                Description: This method creates the database with the given name and if Database already exists then opens the connection to the DB.
+                Description: This method creates the database with the given name and if database already exists then opens the connection to the DB.
                 Output: Connection to the DB
                 On Failure: Raise ConnectionError
 
@@ -51,7 +51,7 @@ class dBOperation:
 
     def createTableDb(self,DatabaseName,column_names):
         """
-                        Method Name: createTableDb
+                        Method Name: create_table_db
                         Description: This method creates a table in the given database which will be used to insert the Good data after raw data validation.
                         Output: None
                         On Failure: Raise Exception
@@ -113,7 +113,7 @@ class dBOperation:
     def insertIntoTableGoodData(self,Database):
 
         """
-                               Method Name: insertIntoTableGoodData
+                               Method Name: insert_into_table_good_data
                                Description: This method inserts the Good data files from the Good_Raw folder into the
                                             above created table.
                                Output: None
@@ -161,7 +161,7 @@ class dBOperation:
     def selectingDatafromtableintocsv(self,Database):
 
         """
-                               Method Name: selectingDatafromtableintocsv
+                               Method Name: selecting_data_from_table_into_csv
                                Description: This method exports the data in GoodData table as a CSV file. in a given location.
                                             above created .
                                Output: None

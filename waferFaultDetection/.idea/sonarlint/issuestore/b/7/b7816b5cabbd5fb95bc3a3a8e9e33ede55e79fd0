@@ -1,26 +1,0 @@
-
-ˆpython:S1192Ñ"jDefine a constant instead of duplicating this literal "Prediction_Logs/missingValuesInColumn.txt" 3 times.(ÛºßÉùÿÿÿÿ
-vpython:S1192û"XDefine a constant instead of duplicating this literal "Prediction_Batch_files/" 4 times.(ïÀŒşÿÿÿÿ
-gpython:S1192¦"IDefine a constant instead of duplicating this literal 'Bad_Raw/' 4 times.(œ™õÓùÿÿÿÿ
-wpython:S1192t"_Define a constant instead of duplicating this literal "Prediction_Logs/GeneralLog.txt" 7 times.(×³Õê
-python:S1192€"wDefine a constant instead of duplicating this literal "Invalid File Name!! File moved to Bad Raw Folder :: %s" 3 times.(ó‘å
-~python:S1192ˆ"`Define a constant instead of duplicating this literal 'Prediction_Raw_Files_Validated/' 3 times.(Øîüåùÿÿÿÿ
-…python:S1192ÿ"gDefine a constant instead of duplicating this literal "Prediction_Raw_Files_Validated/Bad_Raw" 5 times.(’µñ«úÿÿÿÿ
-‡python:S1192§"iDefine a constant instead of duplicating this literal "Prediction_Raw_Files_Validated/Good_Raw/" 6 times.(²ğÅûÿÿÿÿ
-†python:S1192¤"hDefine a constant instead of duplicating this literal "Prediction_Logs/columnValidationLog.txt" 3 times.(şÿ¶üÿÿÿÿ
-Špython:S11928"rDefine a constant instead of duplicating this literal "Prediction_Logs/valuesfromSchemaValidationLog.txt" 3 times.(‡²ª
-„python:S117,"hRename this local variable "LengthOfDateStampInFile" to match the regular expression ^[_a-z][a-z0-9_]*$.(ú­Âºüÿÿÿÿ
-python:S117-"hRename this local variable "LengthOfTimeStampInFile" to match the regular expression ^[_a-z][a-z0-9_]*$.(ëªçı
-|python:S117/"`Rename this local variable "NumberofColumns" to match the regular expression ^[_a-z][a-z0-9_]*$.(à¥ÿ„ùÿÿÿÿ
-Hpython:S1481+"+Remove the unused local variable "pattern".(¬´ŞÇşÿÿÿÿ
-„python:S100y"hRename method "deleteExistingGoodDataTrainingFolder" to match the regular expression ^[a-z_][a-z0-9_]*$.(â¦Å¼üÿÿÿÿ
-python:S100–"gRename method "deleteExistingBadDataTrainingFolder" to match the regular expression ^[a-z_][a-z0-9_]*$.( õ¼ó
-tpython:S100±"\Rename method "moveBadFilesToArchiveBad" to match the regular expression ^[a-z_][a-z0-9_]*$.(¡ƒ¸‘
-{python:S117à"cRename this parameter "LengthOfDateStampInFile" to match the regular expression ^[_a-z][a-z0-9_]*$.(à‹ƒ
-{python:S117à"cRename this parameter "LengthOfTimeStampInFile" to match the regular expression ^[_a-z][a-z0-9_]*$.(à‹ƒ
-spython:S117÷"[Rename this local variable "splitAtDot" to match the regular expression ^[_a-z][a-z0-9_]*$.(Í™’
-qpython:S100à"YRename method "validationFileNameRaw" to match the regular expression ^[a-z_][a-z0-9_]*$.(à‹ƒ
-spython:S117“"[Rename this parameter "NumberofColumns" to match the regular expression ^[_a-z][a-z0-9_]*$.(Óö®„
-ppython:S100“"XRename method "validateColumnLength" to match the regular expression ^[a-z_][a-z0-9_]*$.(Óö®„
-upython:S100½"XRename method "deletePredictionFile" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ğ¢®üúÿÿÿÿ
-}python:S100Â"fRename method "validateMissingValuesInWholeColumn" to match the regular expression ^[a-z_][a-z0-9_]*$.(ë¿’V

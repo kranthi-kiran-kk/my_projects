@@ -5,7 +5,7 @@ from application_logging.logger import App_Logger
 
 class dataTransformPredict:
     """
-        This class shall be used for transforming the Good Raw Training Data before loading it in Database!!.
+        This class shall be used for transforming the Good Raw Training Data before loading it in database!!.
 
      """
 
