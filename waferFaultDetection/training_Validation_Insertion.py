@@ -36,11 +36,11 @@ class train_validation:
             self.log_writer.log(self.file_object,
                                 "Creating Training_Database and tables on the basis of given schema!!!")
             # create database with given name, if present open the connection! Create table with columns given in schema
-            self.dBOperation.createTableDb('Training', column_names)
+            self.dBOperation.create_table_db('Training', column_names)
             self.log_writer.log(self.file_object, "Table creation Completed!!")
             self.log_writer.log(self.file_object, "Insertion of Data into Table started!!!!")
             # insert csv files in the table
-            self.dBOperation.insertIntoTableGoodData('Training')
+            self.dBOperation.insert_into_table_good_data('Training')
             self.log_writer.log(self.file_object, "Insertion in Table completed!!!")
             self.log_writer.log(self.file_object, "Deleting Good Data Folder!!!")
             # Delete the good data folder after loading files in table
@@ -53,7 +53,7 @@ class train_validation:
             self.log_writer.log(self.file_object, "Validation Operation completed!!")
             self.log_writer.log(self.file_object, "Extracting csv file from table")
             # export data in table to csvfile
-            self.dBOperation.selectingDatafromtableintocsv('Training')
+            self.dBOperation.selecting_data_from_table_into_csv('Training')
             self.file_object.close()
 
         except Exception as e:
