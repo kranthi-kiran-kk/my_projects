@@ -1,4 +1,3 @@
-import sqlite3
 from datetime import datetime
 from os import listdir
 import os
@@ -11,13 +10,9 @@ from application_logging.logger import App_Logger
 
 class Prediction_Data_validation:
     """
-               This class shall be used for handling all the validation done on the Raw Prediction Data!!.
+       This class shall be used for handling all the validation done on the Raw Prediction Data!!.
 
-               Written By: iNeuron Intelligence
-               Version: 1.0
-               Revisions: None
-
-               """
+    """
 
     def __init__(self, path):
         self.batch_directory = path
@@ -30,10 +25,6 @@ class Prediction_Data_validation:
         Description: This method extracts all the relevant information from the pre-defined "Schema" file.
         Output: LengthOfDateStampInFile, LengthOfTimeStampInFile, column_names, Number of Columns
         On Failure: Raise ValueError,KeyError,Exception
-
-         Written By: iNeuron Intelligence
-        Version: 1.0
-        Revisions: None
 
         """
         try:
@@ -120,7 +111,7 @@ class Prediction_Data_validation:
 
     def deleteExistingGoodDataTrainingFolder(self):
         """
-                                            Method Name: deleteExistingGoodDataTrainingFolder
+                                            Method Name: delete_existing_good_data_training_folder
                                             Description: This method deletes the directory made to store the Good Data
                                                           after loading the data in the table. Once the good files are
                                                           loaded in the DB,deleting the directory ensures space optimization.
@@ -150,7 +141,7 @@ class Prediction_Data_validation:
     def deleteExistingBadDataTrainingFolder(self):
 
         """
-                                            Method Name: deleteExistingBadDataTrainingFolder
+                                            Method Name: delete_existing_bad_data_training_folder
                                             Description: This method deletes the directory made to store the bad Data.
                                             Output: None
                                             On Failure: OSError
@@ -178,7 +169,7 @@ class Prediction_Data_validation:
 
 
         """
-                                            Method Name: moveBadFilesToArchiveBad
+                                            Method Name: move_bad_files_to_archive_bad
                                             Description: This method deletes the directory made  to store the Bad Data
                                                           after moving the data in an archive folder. We archive the bad
                                                           files to send them back to the client for invalid data issue.
@@ -223,7 +214,7 @@ class Prediction_Data_validation:
 
     def validationFileNameRaw(self,regex,LengthOfDateStampInFile,LengthOfTimeStampInFile):
         """
-            Method Name: validationFileNameRaw
+            Method Name: validation_file_name_raw
             Description: This function validates the name of the prediction csv file as per given name in the schema!
                          Regex pattern is used to do the validation.If name format do not match the file is moved
                          to Bad Raw Data folder else in Good raw data.
