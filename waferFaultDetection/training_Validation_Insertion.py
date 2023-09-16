@@ -5,7 +5,7 @@ from application_logging import logger
 
 
 class train_validation:
-    def __init__(self,path):
+    def __init__(self, path):
         self.raw_data = Raw_Data_validation(path)
         self.data_transform = DataTransform()
         self.db_operation = dBOperation()
@@ -16,7 +16,8 @@ class train_validation:
         try:
             self.log_writer.log(self.file_object, 'Start of Validation on files!!')
             # extracting values from prediction schema
-            length_of_date_stamp_in_file, length_of_time_stamp_in_file, column_names, no_of_columns = self.raw_data.values_from_schema()
+            length_of_date_stamp_in_file, length_of_time_stamp_in_file, \
+                column_names, no_of_columns = self.raw_data.values_from_schema()
             # getting the regex defined to validate filename
             regex = self.raw_data.manual_regex_creation()
             # validating filename of prediction files
@@ -27,7 +28,7 @@ class train_validation:
             self.raw_data.validate_missing_values_in_whole_column()
             self.log_writer.log(self.file_object, "Raw Data Validation Complete!!")
 
-            self.log_writer.log(self.file_object, "Starting Data Transforamtion!!")
+            self.log_writer.log(self.file_object, "Starting Data Transformation!!")
             # replacing blanks in the csv file with "Null" values to insert in table
             self.data_transform.replace_missing_with_null()
 
@@ -56,14 +57,5 @@ class train_validation:
             self.db_operation.selecting_data_from_table_into_csv('Training')
             self.file_object.close()
 
-        except Exception as e:
-            raise e
-
-
-
-
-
-
-
-
-
+        except Exception:
+            raise RuntimeError

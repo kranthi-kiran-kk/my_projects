@@ -41,7 +41,7 @@ def predict_route_client():
             pred = prediction(path)
 
             # predicting for dataset present in database
-            path, json_predictions = pred.predictionFromModel()
+            path, json_predictions = pred.prediction_from_model()
             return Response(f"Prediction File created at !!! {str(path)} and few of the predictions are {str(json.loads(json_predictions))}")
         elif request.form is not None:
             path = request.form['filepath']
@@ -56,7 +56,7 @@ def predict_route_client():
             pred = prediction(path)
 
             # predicting for dataset present in database
-            path, json_predictions = pred.predictionFromModel()
+            path, json_predictions = pred.prediction_from_model()
             return Response(f"Prediction File created at !!! {str(path)} and few of the predictions are {str(json.loads(json_predictions))}")
         else:
             print('Nothing Matched')
