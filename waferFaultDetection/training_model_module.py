@@ -5,6 +5,7 @@ This is the module for Training the Machine Learning Model.
 
 # Doing the necessary imports
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
 from data_ingestion import data_loader
 from data_preprocessing import preprocessing
 from data_preprocessing import clustering
@@ -83,6 +84,8 @@ class trainModel:
                 # object initialization
                 model_finder = tuner.Model_Finder(self.file_object, self.log_writer)
                 # getting the best model for each of the clusters
+                le = LabelEncoder()
+                y_train = le.fit_transform(y_train)
                 best_model_name, best_model = model_finder.get_best_model(x_train, y_train, x_test, y_test)
                 # saving the best model to the directory.
                 file_op = file_methods.File_Operation(self.file_object, self.log_writer)
