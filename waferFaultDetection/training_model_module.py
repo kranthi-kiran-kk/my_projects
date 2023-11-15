@@ -86,6 +86,8 @@ class trainModel:
                 # getting the best model for each of the clusters
                 le = LabelEncoder()
                 y_train = le.fit_transform(y_train)
+                class_mapping = dict(zip(le.classes_, le.transform(le.classes_)))
+                self.log_writer.log(self.file_object, str(class_mapping))
                 best_model_name, best_model = model_finder.get_best_model(x_train, y_train, x_test, y_test)
                 # saving the best model to the directory.
                 file_op = file_methods.File_Operation(self.file_object, self.log_writer)

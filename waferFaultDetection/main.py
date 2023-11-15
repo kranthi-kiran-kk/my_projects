@@ -61,11 +61,11 @@ def predict_route_client():
         else:
             print('Nothing Matched')
     except ValueError:
-        return Response("Error Occurred! %s" % ValueError)
+        return Response("Error Occurred! value  %s" % ValueError)
     except KeyError:
-        return Response("Error Occurred! %s" % KeyError)
+        return Response("Error Occurred! key %s" % KeyError)
     except Exception as ex:
-        return Response("Error Occurred! %s" % ex)
+        return Response("Error Occurred!  ex  %s" % ex)
 
 
 @app.route("/train", methods=['POST'])

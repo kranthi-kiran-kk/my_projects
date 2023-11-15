@@ -9,7 +9,7 @@ class Model_Finder:
     This class shall  be used to find the model having the best accuracy and AUC score.
 
     """
-    def __init__(self, file_object, logger_object):
+    def  __init__(self, file_object, logger_object):
         self.file_object = file_object
         self.logger_object = logger_object
         self.clf = RandomForestClassifier()
@@ -49,7 +49,7 @@ class Model_Finder:
             # training the mew model
             self.clf.fit(train_x, train_y)
             self.logger_object.log(self.file_object,
-                                   f"Random Forest best params: {str(self.grid.best_params_)}. \
+                                   f"Random Forest best params: {str(grid.best_params_)}. \
                                    Exited the get_best_params_for_random_forest method of the Model_Finder class")
 
             return self.clf

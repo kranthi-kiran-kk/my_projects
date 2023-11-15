@@ -82,7 +82,7 @@ class File_Operation:
             folder_name = self.model_directory
             list_of_files = os.listdir(folder_name)
             for file in list_of_files:
-                if file.index(str(cluster_number)) != -1:
+                if file.find(str(cluster_number)) != -1:
                     model_name = file.split('.')[0]
             self.logger_object.log(self.file_object,
                                    "Exited the find_correct_model_file method of the Model_Finder class.")

@@ -185,7 +185,7 @@
 					type: "POST",
 					data: {filepath:path},
 					success: function(response){
-						$(".json-result").html('<p>"Prediction File created at !!!Prediction_Output_File/Predictions.csvand few of the predictions are"</p><pre>' + response + '</pre>');$('#loading').hide();}
+						$(".json-result").html('<p>"Prediction File created at !!!Prediction_Output_File/Predictions.csv and few of the predictions are"</p><pre>' + response + '</pre>');$('#loading').hide();}
 				});
 			});
 			$("#defaultfile").click(function(e){
@@ -196,7 +196,8 @@
 					//change url below
 					url : "/predict",
 					type: "POST",
-					data: {filepath:path},
+					data: JSON.stringify({filepath:path}), // Convert the data to JSON format
+					contentType: "application/json", // Set the Content-Type to JSON
 					success: function(response){
 						$(".json-result").html('<p>"Prediction File created !!!</p><pre>' + response + '</pre>');
 						$('#loading').hide();
