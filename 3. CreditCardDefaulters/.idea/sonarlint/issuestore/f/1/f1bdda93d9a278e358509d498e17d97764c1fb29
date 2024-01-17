@@ -1,0 +1,7 @@
+
+ppython:S11925"SDefine a constant instead of duplicating this literal "Error Occurred! %s" 6 times.(òî´ðùÿÿÿÿ
+6python:S125"Remove this commented out code.(âòÂ·
+opython:S1542"XRename function "predictRouteClient" to match the regular expression ^[a-z_][a-z0-9_]*$.(óƒëS
+upython:S117I"^Rename this local variable "trainModelObj" to match the regular expression ^[_a-z][a-z0-9_]*$.(²¿Ë•
+tpython:S117D"]Rename this local variable "train_valObj" to match the regular expression ^[_a-z][a-z0-9_]*$.(þö¿Ï
+spython:S1542?"VRename function "trainRouteClient" to match the regular expression ^[a-z_][a-z0-9_]*$.(Øˆ®‰ýÿÿÿÿ

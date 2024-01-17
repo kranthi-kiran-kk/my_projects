@@ -22,6 +22,7 @@ CORS(app)
 def home():
     return render_template('index.html')
 
+
 @app.route("/predict", methods=['POST'])
 @cross_origin()
 def predictRouteClient():
@@ -29,7 +30,7 @@ def predictRouteClient():
         if request.json is not None:
             path = request.json['filepath']
 
-            pred_val = pred_validation(path) #object initialization
+            pred_val = pred_validation(path) # object initialization
 
             pred_val.prediction_validation() #calling the prediction_validation function
 
@@ -43,9 +44,9 @@ def predictRouteClient():
 
             pred_val = pred_validation(path) #object initialization
 
-            #pred_val.prediction_validation() #calling the prediction_validation function
-
-            pred = prediction(path) #object initialization
+            # pred_val.prediction_validation() #calling the prediction_validation function
+            # object initialization
+            pred = prediction(path)
 
             # predicting for dataset present in database
             path = pred.predictionFromModel()
@@ -57,7 +58,6 @@ def predictRouteClient():
         return Response("Error Occurred! %s" %KeyError)
     except Exception as e:
         return Response("Error Occurred! %s" %e)
-
 
 
 @app.route("/train", methods=['POST'])
@@ -89,9 +89,11 @@ def trainRouteClient():
         return Response("Error Occurred! %s" % e)
     return Response("Training successfull!!")
 
+
 port = int(os.getenv("PORT",5001))
 if __name__ == "__main__":
     host='0.0.0.0'
+    # http://localhost:5001/
     httpd = simple_server.make_server( host,port, app)
-    print("Serving on %s %d" % ( host,port))
+    print("Serving on %s %d" % (host, port))
     httpd.serve_forever()

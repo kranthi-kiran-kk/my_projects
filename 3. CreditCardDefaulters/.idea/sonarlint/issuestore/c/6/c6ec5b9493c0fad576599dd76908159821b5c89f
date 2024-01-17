@@ -1,0 +1,7 @@
+
+qpython:S116
+"URename this field "dataTransform" to match the regular expression ^[_a-z][_a-z0-9]*$.(é‰Õóùÿÿÿÿ
+jpython:S116"SRename this field "dBOperation" to match the regular expression ^[_a-z][_a-z0-9]*$.(äÄøÂ
+„python:S117"hRename this local variable "LengthOfDateStampInFile" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÉÝéÞþÿÿÿÿ
+„python:S117"hRename this local variable "LengthOfTimeStampInFile" to match the regular expression ^[_a-z][a-z0-9_]*$.(ÉÝéÞþÿÿÿÿ
+upython:S2737<"XAdd logic to this except clause or eliminate it and rethrow the exception automatically.(ÏõîËûÿÿÿÿ

@@ -1,0 +1,22 @@
+
+‡python:S1192*"jDefine a constant instead of duplicating this literal "Prediction_Logs/DataBaseConnectionLog.txt" 4 times.(øÀå¸şÿÿÿÿ
+jpython:S116"SRename this field "badFilePath" to match the regular expression ^[_a-z][_a-z0-9]*$.(‹æ·
+hpython:S116¨"PRename this field "fileName" to match the regular expression ^[_a-z][_a-z0-9]*$.(´ÂÈÉ
+opython:S116§"RRename this field "fileFromDb" to match the regular expression ^[_a-z][_a-z0-9]*$.(–€±åüÿÿÿÿ
+kpython:S116"TRename this field "goodFilePath" to match the regular expression ^[_a-z][_a-z0-9]*$.(¨ú«™
+tpython:S117"XRename this parameter "DatabaseName" to match the regular expression ^[_a-z][a-z0-9_]*$.(Û¥î°ûÿÿÿÿ
+rpython:S100"VRename method "dataBaseConnection" to match the regular expression ^[a-z_][a-z0-9_]*$.(Û¥î°ûÿÿÿÿ
+opython:S1174"XRename this parameter "DatabaseName" to match the regular expression ^[_a-z][a-z0-9_]*$.(–îœÕ
+hpython:S1004"QRename method "createTableDb" to match the regular expression ^[a-z_][a-z0-9_]*$.(–îœÕ
+Cpython:S5806F"+Rename this variable; it shadows a builtin.(ˆÜ˜‰
+Tpython:S5754N"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
+;python:S125L"Remove this commented out code.(İù·öùÿÿÿÿ
+ppython:S117f"TRename this parameter "Database" to match the regular expression ^[_a-z][a-z0-9_]*$.(£åŒºÿÿÿÿÿ
+xpython:S117w"\Rename this local variable "badFilePath" to match the regular expression ^[_a-z][a-z0-9_]*$.(ô¬ÔÄùÿÿÿÿ
+ypython:S117v"]Rename this local variable "goodFilePath" to match the regular expression ^[_a-z][a-z0-9_]*$.(–³—Óøÿÿÿÿ
+wpython:S100f"[Rename method "insertIntoTableGoodData" to match the regular expression ^[a-z_][a-z0-9_]*$.(£åŒºÿÿÿÿÿ
+vpython:S2737ˆ"XAdd logic to this except clause or eliminate it and rethrow the exception automatically.(ÏõîËûÿÿÿÿ
+lpython:S117˜"TRename this parameter "Database" to match the regular expression ^[_a-z][a-z0-9_]*$.(ø³š“
+opython:S117»"XRename this local variable "csvFile" to match the regular expression ^[_a-z][a-z0-9_]*$.(ø˜¾m
+wpython:S117¬"ZRename this local variable "sqlSelect" to match the regular expression ^[_a-z][a-z0-9_]*$.(ûÛ¹Îÿÿÿÿÿ
+ypython:S100˜"aRename method "selectingDatafromtableintocsv" to match the regular expression ^[a-z_][a-z0-9_]*$.(ø³š“

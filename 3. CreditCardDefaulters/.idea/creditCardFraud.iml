@@ -5,6 +5,9 @@
     <orderEntry type="jdk" jdkName="Python 3.7 (creditCardFraud) (3)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="db902cb1-9038-4bf9-b880-b83641129bff" />
+  </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />
   </component>
