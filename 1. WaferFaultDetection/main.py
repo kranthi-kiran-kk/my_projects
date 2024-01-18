@@ -1,18 +1,24 @@
-from wsgiref import simple_server
-from flask import Flask, request, render_template
-from flask import Response
 import os
-from flask_cors import CORS, cross_origin
-from prediction_Validation_Insertion import predValidation
-from training_model_module import trainModel
-from training_Validation_Insertion import train_validation
-import flask_monitoringdashboard as dashboard
-from predictFromModel import prediction
 import json
+from flask import Response
+from wsgiref import simple_server
+# internal module
+from predictFromModel import prediction
+from flask_cors import CORS, cross_origin
+# internal module
+from training_model_module import trainModel
+import flask_monitoringdashboard as dashboard
+from flask import Flask, request, render_template
+# internal module
+from prediction_Validation_Insertion import predValidation
+# internal module
+from training_Validation_Insertion import train_validation
 
+# Setting environment variables
 os.putenv('LANG', 'en_US.UTF-8')
 os.putenv('LC_ALL', 'en_US.UTF-8')
 
+# Setting up Flask application
 app = Flask(__name__)
 dashboard.bind(app)
 CORS(app)
@@ -22,6 +28,18 @@ CORS(app)
 @cross_origin()
 def home():
     return render_template('index.html')
+
+
+'''
+render_template: This is a function provided by Flask that helps in rendering HTML templates. 
+It is part of the Flask module flask.templating.
+
+'index.html': This is the name of the HTML template file to be rendered. Flask looks for this file 
+in a directory called 'templates' by default. You should have a folder named 'templates' in the 
+same directory as your main Flask application file, and 'index.html' should be inside that folder.
+
+
+'''
 
 
 @app.route("/predict", methods=['POST'])
@@ -42,7 +60,8 @@ def predict_route_client():
 
             # predicting for dataset present in database
             path, json_predictions = pred.prediction_from_model()
-            return Response(f"Prediction File created at !!! {str(path)} and few of the predictions are {str(json.loads(json_predictions))}")
+            return Response(f"Prediction File created at !!! {str(path)} and few of the \
+                             predictions are {str(json.loads(json_predictions))}")
         elif request.form is not None:
             path = request.form['filepath']
 
@@ -57,7 +76,8 @@ def predict_route_client():
 
             # predicting for dataset present in database
             path, json_predictions = pred.prediction_from_model()
-            return Response(f"Prediction File created at !!! {str(path)} and few of the predictions are {str(json.loads(json_predictions))}")
+            return Response(f"Prediction File created at !!! {str(path)} and few of the \
+                            predictions are {str(json.loads(json_predictions))}")
         else:
             print('Nothing Matched')
     except ValueError:
