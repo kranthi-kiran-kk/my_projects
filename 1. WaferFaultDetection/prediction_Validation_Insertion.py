@@ -38,7 +38,10 @@ class predValidation:
 
             self.log_writer.log(self.file_object, "Creating Prediction_Database and \
             tables on the basis of given schema!!!")
-            # create database with given name, if present open the connection! Create table with columns given in schema
+
+            # create database with given name, if present open the connection! Create table with
+            # columns given in schema
+
             self.db_operation.create_table_db('Prediction', column_names)
             self.log_writer.log(self.file_object, "Table creation Completed!!")
             self.log_writer.log(self.file_object, "Insertion of Data into Table started!!!!")
@@ -49,12 +52,15 @@ class predValidation:
             # Delete the good data folder after loading files in table
             self.raw_data.delete_existing_good_data_training_folder()
             self.log_writer.log(self.file_object, "Good_Data folder deleted!!!")
-            self.log_writer.log(self.file_object, "Moving bad files to Archive and deleting Bad_Data folder!!!")
+            self.log_writer.log(self.file_object, "Moving bad files to Archive and deleting \
+                                                  Bad_Data folder!!!")
             # Move the bad files to archive folder
             self.raw_data.move_bad_files_to_archive_bad()
-            self.log_writer.log(self.file_object, "Bad files moved to archive!! Bad folder Deleted!!")
+            self.log_writer.log(self.file_object, "Bad files moved to archive!! Bad folder \
+                                                  Deleted!!")
             self.log_writer.log(self.file_object, "Validation Operation completed!!")
             self.log_writer.log(self.file_object, "Extracting csv file from table")
+
             # export data in table to csvfile
             self.db_operation.selecting_data_from_table_into_csv('Prediction')
 
