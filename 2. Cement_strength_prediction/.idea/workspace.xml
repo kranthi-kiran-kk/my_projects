@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88e70847-b583-4ccd-ac60-302b3fca219b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/2. Cement_strength_prediction.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/cement_strength_prediction.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flask_monitoringdashboard.db" beforeDir="false" afterPath="$PROJECT_DIR$/flask_monitoringdashboard.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3. CreditCardDefaulters/.idea/creditCardFraud.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../3. CreditCardDefaulters/.idea/creditCardFraud.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3. CreditCardDefaulters/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../3. CreditCardDefaulters/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../3. CreditCardDefaulters/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../3. CreditCardDefaulters/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1. WaferFaultDetection/best_model_finder/tuner.py" beforeDir="false" afterPath="$PROJECT_DIR$/../1. WaferFaultDetection/best_model_finder/tuner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../1. WaferFaultDetection/data_ingestion/data_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/../1. WaferFaultDetection/data_ingestion/data_loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/2. Cement_strength_prediction.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/2. Cement_strength_prediction.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/c/bc88f2d5bad98a888fbf6061f84359853a3dafa4" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/c/bc88f2d5bad98a888fbf6061f84359853a3dafa4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f69b8ce2e31684ae06f1b3e84821e07e3dfddb2f" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/6/f69b8ce2e31684ae06f1b3e84821e07e3dfddb2f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,16 +31,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/GITR/ML-Projects/ML-Projects/3. CreditCardDefaulters"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/GITR/my_projects/2. Cement_strength_prediction&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GITR\my_projects\2. Cement_strength_prediction" />
       <recent name="D:\GITR\ML-Projects\ML-Projects\2. Cement_strength_prediction" />
     </key>
   </component>

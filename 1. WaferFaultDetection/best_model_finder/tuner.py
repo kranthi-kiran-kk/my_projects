@@ -9,7 +9,7 @@ class Model_Finder:
     This class shall  be used to find the model having the best accuracy and AUC score.
 
     """
-    def  __init__(self, file_object, logger_object):
+    def __init__(self, file_object, logger_object):
         self.file_object = file_object
         self.logger_object = logger_object
         self.clf = RandomForestClassifier()

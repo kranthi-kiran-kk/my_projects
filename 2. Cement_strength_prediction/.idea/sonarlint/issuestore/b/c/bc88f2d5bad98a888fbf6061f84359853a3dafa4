@@ -1,7 +1,7 @@
 
 ‡python:S1192*"jDefine a constant instead of duplicating this literal "Prediction_Logs/DataBaseConnectionLog.txt" 4 times.(øÀå¸şÿÿÿÿ
-jpython:S116"SRename this field "badFilePath" to match the regular expression ^[_a-z][_a-z0-9]*$.(‹æ·
 hpython:S116¨"PRename this field "fileName" to match the regular expression ^[_a-z][_a-z0-9]*$.(´ÂÈÉ
+jpython:S116"SRename this field "badFilePath" to match the regular expression ^[_a-z][_a-z0-9]*$.(‹æ·
 opython:S116§"RRename this field "fileFromDb" to match the regular expression ^[_a-z][_a-z0-9]*$.(–€±åüÿÿÿÿ
 kpython:S116"TRename this field "goodFilePath" to match the regular expression ^[_a-z][_a-z0-9]*$.(¨ú«™
 tpython:S117"XRename this parameter "DatabaseName" to match the regular expression ^[_a-z][a-z0-9_]*$.(Û¥î°ûÿÿÿÿ
