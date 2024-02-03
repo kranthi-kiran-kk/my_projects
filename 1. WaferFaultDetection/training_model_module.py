@@ -47,8 +47,8 @@ class trainModel:
                 x = preprocessor.impute_missing_values(x)
 
             # check further which columns do not contribute to predictions
-            # if the standard deviation for a column is zero, it means that the column has constant values,
-            # and they are giving the same output both for good and bad sensors
+            # if the standard deviation for a column is zero, it means that the column has
+            # constant values, and they are giving the same output both for good and bad sensors
             # prepare the list of such columns to drop
             cols_to_drop = preprocessor.get_columns_with_zero_std_deviation(x)
 
@@ -62,13 +62,15 @@ class trainModel:
             number_of_clusters = kmeans.elbow_plot(x)
             # Divide the data into clusters
             x = kmeans.create_clusters(x, number_of_clusters)
-            # create a new column in the dataset consisting of the corresponding cluster assignments.
+            # create a new column in the dataset consisting of the corresponding
+            # cluster assignments.
             x['Labels'] = y
 
             # getting the unique clusters from our dataset
             list_of_clusters = x['Cluster'].unique()
 
-            """parsing all the clusters and looking for the best ML algorithm to fit on individual cluster"""
+            """parsing all the clusters and looking for the best ML algorithm to fit
+             on individual cluster"""
 
             for i in list_of_clusters:
                 # filter the data for one cluster
@@ -80,7 +82,8 @@ class trainModel:
 
                 # splitting the data into training and test set for each cluster one by one
                 x_train, x_test, y_train, y_test = train_test_split(cluster_features, cluster_label,
-                                                                    test_size=1 / 3, random_state=355)
+                                                                    test_size=1 / 3,
+                                                                    random_state=355)
                 # object initialization
                 model_finder = tuner.Model_Finder(self.file_object, self.log_writer)
                 # getting the best model for each of the clusters
@@ -88,7 +91,8 @@ class trainModel:
                 y_train = le.fit_transform(y_train)
                 class_mapping = dict(zip(le.classes_, le.transform(le.classes_)))
                 self.log_writer.log(self.file_object, str(class_mapping))
-                best_model_name, best_model = model_finder.get_best_model(x_train, y_train, x_test, y_test)
+                best_model_name, best_model = model_finder.get_best_model(x_train, y_train, x_test,
+                                                                          y_test)
                 # saving the best model to the directory.
                 file_op = file_methods.File_Operation(self.file_object, self.log_writer)
                 _ = file_op.save_model(best_model, best_model_name+str(i))

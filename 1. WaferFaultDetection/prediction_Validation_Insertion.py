@@ -23,7 +23,8 @@ class predValidation:
             # getting the regex defined to validate filename
             regex = self.raw_data.manual_regex_creation()
             # validating filename of prediction files
-            self.raw_data.validation_file_name_raw(regex, length_of_date_stamp_in_file, length_of_time_stamp_in_file)
+            self.raw_data.validation_file_name_raw(regex, length_of_date_stamp_in_file,
+                                                   length_of_time_stamp_in_file)
             # validating column length in the file
             self.raw_data.validate_column_length(no_of_columns)
             # validating if any column has all values missing

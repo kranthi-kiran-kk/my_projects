@@ -51,12 +51,14 @@ class prediction:
                 model_name = file_loader.find_correct_model_file(i)
                 model = file_loader.load_model(model_name)
                 result = list(model.predict(cluster_data))
-                result = pandas.DataFrame(list(zip(wafer_names, result)), columns=['Wafer', 'Prediction'])
+                result = pandas.DataFrame(list(zip(wafer_names, result)),
+                                          columns=['Wafer', 'Prediction'])
                 path = "Prediction_Output_File/Predictions.csv"
                 # appends result to prediction file
                 result.to_csv("Prediction_Output_File/Predictions.csv", header=True, mode='a+')
             self.log_writer.log(self.file_object, 'End of Prediction')
         except Exception as ex:
-            self.log_writer.log(self.file_object, 'Error occurred while running the prediction!! Error:: %s' % ex)
+            self.log_writer.log(self.file_object, 'Error occurred while running the prediction!! \
+                                                  Error:: %s' % ex)
             raise ex
         return path, result.head().to_json(orient="records")
