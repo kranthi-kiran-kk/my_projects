@@ -13,8 +13,8 @@ class App_Logger:
         file_object,
         log_message,
     ):
-        # file_object.write(str(self.date) + "/" + str(self.current_time) +
-        # "\t\t" + log_message +"\n")
+        """file_object.write(str(self.date) + "/" + str(self.current_time) +
+        \t\t" + log_message +"\n")"""
         file_object.write(
             f"{str(self.date)}/{str(self.current_time)}'\t\t' {log_message} '\n'"
         )
