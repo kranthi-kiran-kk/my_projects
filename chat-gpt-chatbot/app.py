@@ -1,8 +1,7 @@
 from flask import Flask, render_template, jsonify, request
 import config
-
-# import openai
-# import aiapi
+import openai
+import aiapi
 
 
 def page_not_found(e):
