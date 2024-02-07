@@ -20,7 +20,7 @@ def generate_response(prompt):
     messages.append(question)
     response = client.chat.completions.create(model="gpt-3.5-turbo", messages=messages)
     try:
-        answer = response["choices"][0]["message"]["content"]
+        answer = response["choices"][0]["message"]["content"].replace("\n", "<br>")
     except:
         answer = "Try again later"
     return answer
