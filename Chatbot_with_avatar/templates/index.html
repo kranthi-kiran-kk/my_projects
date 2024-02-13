@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HARI</title>
+    <link rel="stylesheet" type="text/css" href="static\css\main.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: black;
+        /* background-image: url("static/tenor.gif");
+      background-repeat: no-repeat;
+      background-size: 50% 750px; */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-fluid-clone">
+      <div id="video-wrapper" class="video-section">
+        <div class="video-container">
+          <!-- <video id="talk-video" width="400" height="400" autoplay></video> -->
+          <video id="talk-video"  autoplay></video>
+        </div>
+      </div>
+      <!-- <div id="video-section" class="video-section">
+        <div class="video-container">
+          <iframe class="video" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+          <img class="avatar" src="static/tenor.gif" alt="Girl in a jacket" />
+        </div>
+      </div> -->
+
+      <!-- Chatbot Section -->
+      <div class="chatbot-container">
+        <div id="header">
+          <h1>HARI</h1>
+        </div>
+        <div id="chatbot">
+          <div id="conversation">
+            <div class="chatbot-message">
+              <p class="chatbot-text">Hi! 👋 it's great to see you!</p>
+            </div>
+          </div>
+          <form id="input-form">
+            <message-container>
+              <input
+                id="input-field"
+                type="text"
+                placeholder="Type your message here"
+              />
+              <button id="talk-button" type="submit">
+                <img
+                  class="send-icon"
+                  src="static\send-message.png"
+                  alt=""
+                  width="32px"
+                  height="32px"
+                />
+              </button>
+              <button id="connect-button" type="button">
+                <img
+                  class="play-icon"
+                  src="static\play.png"
+                  alt=""
+                  width="32px"
+                  height="32px" 
+                />
+              </button>
+              <button id="destroy-button" type="button">
+                <img
+                  class="stop-icon"
+                  src="static\stop-button.png"
+                  alt=""
+                  width="32px"
+                  height="32px" 
+                />
+              </button>
+            </message-container>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="static\js\chatbot.js"></script>
+    <!-- <script src="static\js\functionality.js"></script> -->
+  </body>
+</html>
