@@ -116,7 +116,7 @@ connectButton.onclick = async () => {
     },
     body: JSON.stringify({
       source_url:
-        "https://raw.githubusercontent.com/jjmlovesgit/D-id_Streaming_Chatgpt/main/oracle_pic.jpg",
+        "https://raw.githubusercontent.com/kranthi-kiran-kk/my_projects/main/Chatbot_with_avatar/static/saleswoman2.jpg",
     }),
   });
 
@@ -416,7 +416,7 @@ function setVideoElement(stream) {
 
 function playIdleVideo() {
   talkVideo.srcObject = undefined;
-  talkVideo.src = "https://github.com/kranthi-kiran-kk/my_projects/blob/main/Chatbot_with_avatar/static/tenor.gif";
+  talkVideo.src = "static\\tenor.mp4";
   talkVideo.loop = true;
 }
 

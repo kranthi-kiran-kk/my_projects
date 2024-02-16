@@ -45,12 +45,13 @@
   /* height: 0; */
   overflow: hidden;
 }
-.video {
+
+#talk-video {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  width: 100%; 
   height: 100%;
+  object-fit: contain;
+
 }
 
 .avatar {
@@ -295,3 +296,22 @@ p[sentTime]:hover::after {
 .streamingState-empty {
   color: grey;
 }
+
+.navbar-dark .navbar-toggler {
+  color: rgba(255,255,255,.5);
+  border-color: black;
+}
+
+.bg-dark {
+  background-color: black;
+}
+
+.navbar{
+  background-color: black;
+} 
+
+.navbar-dark{
+  background-color: black;
+
+} 
+
