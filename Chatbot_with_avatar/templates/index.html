@@ -25,10 +25,58 @@
 
   <body>
     <div class="container-fluid-clone">
+      <div class="bg-dark p-4">
+        <nav class="navbar navbar-light bg-light">
+          <span class="navbar-text">
+            <div id="status" class = "text-white bg-dark p-4">
+            
+              ICE gathering status: <label id="ice-gathering-status-label"></label
+              ><br />
+              ICE status: <label id="ice-status-label"></label><br />
+              Peer connection status: <label id="peer-status-label"></label><br />
+              Signaling status: <label id="signaling-status-label"></label><br />
+              Streaming status: <label id="streaming-status-label"></label><br />
+            </div>
+          </span>
+        </nav>
+      </div>
+      <!-- <div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+          <div class="bg-dark p-4">
+            <h5 class="text-white h4">Collapsed content</h5>
+            <span class="text-muted">Toggleable via the navbar brand.</span>
+            <div id="status" class = "text-white">
+            
+              ICE gathering status: <label id="ice-gathering-status-label"></label
+              ><br />
+              ICE status: <label id="ice-status-label"></label><br />
+              Peer connection status: <label id="peer-status-label"></label><br />
+              Signaling status: <label id="signaling-status-label"></label><br />
+              Streaming status: <label id="streaming-status-label"></label><br />
+            </div>
+          </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+      </div> -->
+
+      
       <div id="video-wrapper" class="video-section">
         <div class="video-container">
           <!-- <video id="talk-video" width="400" height="400" autoplay></video> -->
-          <video id="talk-video"  autoplay></video>
+          <!-- <img class="avatar" src="static/tenor.gif" alt="Girl in a jacket" /> -->
+          <video id="talk-video" autoplay></video>
         </div>
       </div>
       <!-- <div id="video-section" class="video-section">
@@ -56,7 +104,7 @@
                 type="text"
                 placeholder="Type your message here"
               />
-              <button id="talk-button" type="submit">
+              <button id="talk-button" type="button">
                 <img
                   class="send-icon"
                   src="static\send-message.png"
@@ -71,7 +119,7 @@
                   src="static\play.png"
                   alt=""
                   width="32px"
-                  height="32px" 
+                  height="32px"
                 />
               </button>
               <button id="destroy-button" type="button">
@@ -80,7 +128,7 @@
                   src="static\stop-button.png"
                   alt=""
                   width="32px"
-                  height="32px" 
+                  height="32px"
                 />
               </button>
             </message-container>
@@ -88,7 +136,14 @@
         </div>
       </div>
     </div>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script> -->
+
     <script src="static\js\chatbot.js"></script>
-    <!-- <script src="static\js\functionality.js"></script> -->
+    <!-- <script src="static\js\test_openai.js"></script> -->
   </body>
 </html>
