@@ -416,7 +416,7 @@ function setVideoElement(stream) {
 
 function playIdleVideo() {
   talkVideo.srcObject = undefined;
-  talkVideo.src = "static\\tenor.gif";
+  talkVideo.src = "https://github.com/kranthi-kiran-kk/my_projects/blob/main/Chatbot_with_avatar/static/tenor.gif";
   talkVideo.loop = true;
 }
 
