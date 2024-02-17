@@ -5,14 +5,38 @@
   padding-left: 0px;
   padding-right: 0px;
   width: 100%;
+  flex-direction: column;
   /* align-items:end; */
   font-family: Arial, sans-serif;
 }
-.chatbot-container, .video-section {
-  /* flex: 1; */
-  flex: auto;
-  
+
+.pos-f-t {
+  order: 1; /* Make it appear first */
 }
+
+.video-connection {
+  order: 2; /* Make it appear second */
+  flex-grow: 1; /* Allow it to grow and fill the remaining space */
+}
+
+.video-connection {
+  background-color: black;
+  display: flex;
+  height: auto;
+  width: 100%;
+}
+
+.video-section,
+.chatbot-container {
+  flex-grow: 1; /* Occupy remaining space */
+}
+
+.pos-f-t {
+  height: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
 /* .chatbot-section {
   background-color:black;  
   align-items:center;
@@ -35,30 +59,28 @@
 
 .video-section {
   background-color: black;
-  align-items:stretch;
+  align-items: stretch;
   height: auto;
   width: 50%;
 }
 .video-container {
   position: relative;
   /* padding-bottom: 56.25%; */
-  /* height: 0; */
+  height: 97vh;
   overflow: hidden;
 }
 
 #talk-video {
   position: absolute;
-  width: 100%; 
+  width: 100%;
   height: 100%;
   object-fit: contain;
-
 }
 
 .avatar {
   width: 100%;
   height: 100vh;
 }
-
 
 .chatbot-container {
   width: 35%;
@@ -79,7 +101,7 @@
 #header {
   background-color: transparent;
   color: #55c9d3;
-  padding: 20px;
+  padding: 11px;
   font-size: 1em;
   font-weight: bold;
   text-align: center;
@@ -91,7 +113,6 @@ message-container {
   display: flex;
   align-items: center;
 }
-
 
 #conversation {
   height: 78vh;
@@ -129,7 +150,6 @@ message-container {
   justify-content: flex-end;
 }
 
-
 .chatbot-text {
   background-color: #a251ea;
   color: white;
@@ -153,7 +173,7 @@ message-container {
   padding: 0 10px;
   font-size: 16px;
   transition: border-color 0.3s;
-  background:  #a251ea;
+  background: #a251ea;
   color: white;
   border: none;
   text-align: center;
@@ -171,9 +191,17 @@ message-container {
   cursor: pointer;
 }
 
-.stop-icon{
+.stop-icon {
   margin-right: 5px;
   cursor: pointer;
+}
+
+.navbar-toggler{
+  background-color: #eef1f5;
+}
+
+.toggle-button{
+  background-color: white;
 }
 
 #input-field:focus {
@@ -189,7 +217,7 @@ input::placeholder {
   background-color: transparent;
   border: none;
 }
-#connect-button{
+#connect-button {
   background-color: transparent;
   border: none;
 }
@@ -198,7 +226,7 @@ input::placeholder {
   border: none;
 }
 
-p[sentTime]:hover::after {    
+p[sentTime]:hover::after {
   content: attr(sentTime);
   position: absolute;
   top: -3px;
@@ -206,14 +234,13 @@ p[sentTime]:hover::after {
   color: gray;
 }
 
-.chatbot p[sentTime]:hover::after {  
+.chatbot p[sentTime]:hover::after {
   left: 15px;
 }
 
-.user-message p[sentTime]:hover::after {  
+.user-message p[sentTime]:hover::after {
   right: 15px;
 }
-
 
 /* width */
 ::-webkit-scrollbar {
@@ -222,17 +249,17 @@ p[sentTime]:hover::after {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 .peerConnectionState-new {
@@ -297,21 +324,33 @@ p[sentTime]:hover::after {
   color: grey;
 }
 
-.navbar-dark .navbar-toggler {
-  color: rgba(255,255,255,.5);
+/* .navbar-dark .navbar-toggler {
+  color: rgba(255, 255, 255, 0.5);
   border-color: black;
+} */
+
+.navbar_new {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 2px;
+  background-color: black;
+  height: auto;
 }
 
-.bg-dark {
-  background-color: black;
+.navbar_toggler {
+  padding: 0;
+  font-size: 10px;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  height: 10px
 }
 
-.navbar{
-  background-color: black;
-} 
-
-.navbar-dark{
-  background-color: black;
-
-} 
 

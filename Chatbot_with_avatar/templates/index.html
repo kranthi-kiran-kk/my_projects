@@ -20,6 +20,15 @@
       background-repeat: no-repeat;
       background-size: 50% 750px; */
       }
+
+      /* .pos-f-t,
+      .video-connection {
+        flex: 1;
+        flex: auto;
+      } */
+     
+
+      
       
     </style>
   </head>
@@ -44,9 +53,9 @@
             </div>
           </div>
         </div>
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar_new">
           <button
-            class="navbar-toggler"
+            class="navbar_toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarToggleExternalContent"
@@ -54,64 +63,65 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span style="color:white; font-weight:bold; font-size: 15px;">Connection Status </span>
           </button>
         </nav>
       </div>
-
-      <div id="video-wrapper" class="video-section">
-        <div class="video-container" style="height: 100vh; overflow: hidden">
-          <video id="talk-video" autoplay></video>
-        </div>
-      </div>
-
-      <!-- Chatbot Section -->
-      <div class="chatbot-container">
-        <div id="header">
-          <h1>HARI</h1>
-        </div>
-        <div id="chatbot">
-          <div id="conversation">
-            <div class="chatbot-message">
-              <p class="chatbot-text">Hi! 👋 it's great to see you!</p>
-            </div>
+      <div class="video-connection">
+        <div id="video-wrapper" class="video-section">
+          <div class="video-container" style= "overflow: hidden">
+            <video id="talk-video" autoplay></video>
           </div>
-          <form id="input-form">
-            <message-container>
-              <input
-                id="input-field"
-                type="text"
-                placeholder="Type your message here"
-              />
-              <button id="talk-button" type="button">
-                <img
-                  class="send-icon"
-                  src="static\send-message.png"
-                  alt=""
-                  width="32px"
-                  height="32px"
+        </div>
+
+        <!-- Chatbot Section -->
+        <div class="chatbot-container">
+          <div id="header">
+            <h1>HARI</h1>
+          </div>
+          <div id="chatbot">
+            <div id="conversation">
+              <div class="chatbot-message">
+                <p class="chatbot-text">Hi! 👋 it's great to see you!</p>
+              </div>
+            </div>
+            <form id="input-form">
+              <message-container>
+                <input
+                  id="input-field"
+                  type="text"
+                  placeholder="Type your message here"
                 />
-              </button>
-              <button id="connect-button" type="button">
-                <img
-                  class="play-icon"
-                  src="static\play.png"
-                  alt=""
-                  width="32px"
-                  height="32px"
-                />
-              </button>
-              <button id="destroy-button" type="button">
-                <img
-                  class="stop-icon"
-                  src="static\stop-button.png"
-                  alt=""
-                  width="32px"
-                  height="32px"
-                />
-              </button>
-            </message-container>
-          </form>
+                <button id="talk-button" type="button">
+                  <img
+                    class="send-icon"
+                    src="static\send-message.png"
+                    alt=""
+                    width="32px"
+                    height="32px"
+                  />
+                </button>
+                <button id="connect-button" type="button">
+                  <img
+                    class="play-icon"
+                    src="static\play.png"
+                    alt=""
+                    width="32px"
+                    height="32px"
+                  />
+                </button>
+                <button id="destroy-button" type="button">
+                  <img
+                    class="stop-icon"
+                    src="static\stop-button.png"
+                    alt=""
+                    width="32px"
+                    height="32px"
+                  />
+                </button>
+              </message-container>
+            </form>
+          </div>
         </div>
       </div>
     </div>
