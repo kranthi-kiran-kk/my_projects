@@ -36,7 +36,7 @@ async function fetchConfig() {
   }
 }
 
-// OpenAI API endpoint set up new 10/23
+// OpenAI API endpoint
 async function fetchOpenAIResponse(userMessage) {
   const response = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
@@ -59,19 +59,6 @@ async function fetchOpenAIResponse(userMessage) {
   return data.choices[0].message.content.trim();
 }
 
-// async function log_response() {
-//   await fetchConfig();
-
-//   const userInput = "Who is the CEO of Tesla?";
-//   const openAIResponse = await fetchOpenAIResponse(userInput);
-
-//   console.log("User Input:", userInput);
-//   console.log("OpenAI Response:", openAIResponse);
-// }
-
-// log_response().catch((error) => console.error(error));
-
-// //same  - No edits from Github example for this whole section
 const RTCPeerConnection = (
   window.RTCPeerConnection ||
   window.webkitRTCPeerConnection ||
@@ -156,15 +143,13 @@ connectButton.onclick = async () => {
   );
 };
 
-// This is changed to accept the ChatGPT response as Text input to D-ID #138 responseFromOpenAI
+// responseFromOpenAI
 const talkButton = document.getElementById("talk-button");
 talkButton.onclick = async () => {
   if (
     peerConnection?.signalingState === "stable" ||
     peerConnection?.iceConnectionState === "connected"
   ) {
-    //
-    // New from Jim 10/23 -- Get the user input from the text input field get ChatGPT Response
     const chatbot = document.getElementById("chatbot");
     const conversation = document.getElementById("conversation");
     const inputForm = document.getElementById("input-form");
@@ -174,7 +159,7 @@ talkButton.onclick = async () => {
 
     // Print the openAIResponse to the console
     console.log("OpenAI Response:", responseFromOpenAI);
- 
+
     // Clear input field
     document.getElementById("input-field").value = "";
     const currentTime = new Date().toLocaleTimeString([], {
@@ -211,7 +196,7 @@ talkButton.onclick = async () => {
             subtitles: "false",
             provider: {
               type: "microsoft",
-              voice_id: "en-US-ChristopherNeural",
+              voice_id: "en-US-AmberNeural",
             },
             ssml: false,
             input: responseFromOpenAI, //send the openAIResponse to D-id
@@ -244,9 +229,6 @@ talkButton.onclick = async () => {
     );
   }
 };
-
-// NOTHING BELOW THIS LINE IS CHANGED FROM ORIGNAL D-id File Example
-//
 
 const destroyButton = document.getElementById("destroy-button");
 destroyButton.onclick = async () => {
@@ -332,16 +314,6 @@ function onVideoStatusChange(videoIsPlaying, stream) {
 }
 
 function onTrack(event) {
-  /**
-   * The following code is designed to provide information about wether currently there is data
-   * that's being streamed - It does so by periodically looking for changes in total stream data size
-   *
-   * This information in our case is used in order to show idle video while no talk is streaming.
-   * To create this idle video use the POST https://api.d-id.com/talks endpoint with a silent audio file or a text script with only ssml breaks
-   * https://docs.aws.amazon.com/polly/latest/dg/supportedtags.html#break-tag
-   * for seamless results use `config.fluent: true` and provide the same configuration as the streaming video
-   */
-
   if (!event.track) return;
 
   statsIntervalId = setInterval(async () => {
@@ -416,7 +388,7 @@ function setVideoElement(stream) {
 
 function playIdleVideo() {
   talkVideo.srcObject = undefined;
-  talkVideo.src = "static\\tenor.mp4";
+  talkVideo.src = "static\\saleswomen-idle.mp4";
   talkVideo.loop = true;
 }
 
@@ -463,7 +435,6 @@ function closePC(pc = peerConnection) {
 
 const maxRetryCount = 3;
 const maxDelaySec = 4;
-// Default of 1 moved to 5
 async function fetchWithRetries(url, options, retries = 3) {
   try {
     return await fetch(url, options);

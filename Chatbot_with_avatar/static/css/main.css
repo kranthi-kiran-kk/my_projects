@@ -1,12 +1,10 @@
 /* CSS styles for the chatbot and video sections */
 .container-fluid-clone {
   display: flex;
-  /* justify-content:right; */
   padding-left: 0px;
   padding-right: 0px;
   width: 100%;
   flex-direction: column;
-  /* align-items:end; */
   font-family: Arial, sans-serif;
 }
 
@@ -28,7 +26,7 @@
 
 .video-section,
 .chatbot-container {
-  flex-grow: 1; /* Occupy remaining space */
+  flex-grow: 1; 
 }
 
 .pos-f-t {
@@ -36,26 +34,6 @@
   padding-left: 0px;
   padding-right: 0px;
 }
-
-/* .chatbot-section {
-  background-color:black;  
-  align-items:center;
-} */
-/* .chatbox {
-  background-color:black;  
-  align-items: center;
-  width: 50%;
-  height: auto;
-}
-
-.chat-messages {
-
-  height: auto;
-  width: 100%;
-  align-items: end;
-  border: 0px solid #ccc;
-  padding: 0px;
-} */
 
 .video-section {
   background-color: black;
@@ -65,7 +43,6 @@
 }
 .video-container {
   position: relative;
-  /* padding-bottom: 56.25%; */
   height: 97vh;
   overflow: hidden;
 }
