@@ -84,16 +84,27 @@ def get_response(user_query, vector_store, chat_history):
     return response["answer"]
 
 
+def append_chathistory(chat_history, user_query, response):
+    chat_history.append(HumanMessage(content=user_query))
+    chat_history.append(AIMessage(content=response))
+
+
 chat_history = [
     AIMessage(content="Hello, I am a bot. How can I help you?"),
 ]
 vector_store = get_vectorstore_from_url(url_list)
 
 # user input
-user_query = "Who is the CEO of Hushh"
-if user_query is not None and user_query != "":
-    response = get_response(user_query, vector_store, chat_history)
-    chat_history.append(HumanMessage(content=user_query))
-    chat_history.append(AIMessage(content=response))
+user_query = "Who is the CEO of Hushh and who is the CEO of Tesla and CEO of OpenAi"
+user_query2 = "Tell me a joke"
 
-print(response)
+
+def return_response(user_query):
+    if user_query is not None and user_query != "":
+        response = get_response(user_query, vector_store, chat_history)
+        append_chathistory(chat_history, user_query, response)
+        return response
+
+
+print(return_response(user_query2))
+print(chat_history)

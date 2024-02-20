@@ -59,6 +59,25 @@ async function fetchOpenAIResponse(userMessage) {
   return data.choices[0].message.content.trim();
 }
 
+// langchain-custom-chat API endpoint
+async function fetchlangchainResponse(userMessage) {
+  try{
+    const response = await fetch("/answer", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({userquery:userMessage}),
+      });
+
+      const data = await response.json();
+      return data.answer;
+  }catch (error) {
+    console.error('There was a problem with your fetch operation:', error);
+  }
+  }
+ 
+
 const RTCPeerConnection = (
   window.RTCPeerConnection ||
   window.webkitRTCPeerConnection ||
@@ -153,12 +172,14 @@ talkButton.onclick = async () => {
     const chatbot = document.getElementById("chatbot");
     const conversation = document.getElementById("conversation");
     const inputForm = document.getElementById("input-form");
-    await fetchConfig();
+    // await fetchConfig();
     const userInput = document.getElementById("input-field").value;
-    const responseFromOpenAI = await fetchOpenAIResponse(userInput);
+    // const responseFromOpenAI = await fetchOpenAIResponse(userInput);
+    const responseFromLangchain = await fetchlangchainResponse(userInput)
 
     // Print the openAIResponse to the console
-    console.log("OpenAI Response:", responseFromOpenAI);
+    // console.log("OpenAI Response:", responseFromOpenAI);
+    console.log("Langchain Response:", responseFromLangchain);
 
     // Clear input field
     document.getElementById("input-field").value = "";
@@ -176,57 +197,58 @@ talkButton.onclick = async () => {
     // Add chatbot response to conversation
     message = document.createElement("div");
     message.classList.add("chatbot-message", "chatbot");
-    message.innerHTML = `<p class="chatbot-text" sentTime="${currentTime}">${responseFromOpenAI}</p>`;
+    // message.innerHTML = `<p class="chatbot-text" sentTime="${currentTime}">${responseFromOpenAI}</p>`;
+    message.innerHTML = `<p class="chatbot-text" sentTime="${currentTime}">${responseFromLangchain}</p>`;
     conversation.appendChild(message);
     message.scrollIntoView({ behavior: "smooth" });
 
-    const DID_API = await fetchApiData();
+    // const DID_API = await fetchApiData();
 
-    const talkResponse = await fetch(
-      `${DID_API.url}/talks/streams/${streamId}`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Basic ${DID_API.key}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          script: {
-            type: "text",
-            subtitles: "false",
-            provider: {
-              type: "microsoft",
-              voice_id: "en-US-AmberNeural",
-            },
-            ssml: false,
-            input: responseFromOpenAI, //send the openAIResponse to D-id
-          },
-          config: {
-            fluent: true,
-            pad_audio: 0,
-            driver_expressions: {
-              expressions: [
-                { expression: "neutral", start_frame: 0, intensity: 0 },
-              ],
-              transition_frames: 0,
-            },
-            align_driver: true,
-            align_expand_factor: 0,
-            auto_match: true,
-            motion_factor: 0,
-            normalization_factor: 0,
-            sharpen: true,
-            stitch: true,
-            result_format: "mp4",
-          },
-          driver_url: "bank://lively/",
-          config: {
-            stitch: true,
-          },
-          session_id: sessionId,
-        }),
-      }
-    );
+    // const talkResponse = await fetch(
+    //   `${DID_API.url}/talks/streams/${streamId}`,
+    //   {
+    //     method: "POST",
+    //     headers: {
+    //       Authorization: `Basic ${DID_API.key}`,
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       script: {
+    //         type: "text",
+    //         subtitles: "false",
+    //         provider: {
+    //           type: "microsoft",
+    //           voice_id: "en-US-AmberNeural",
+    //         },
+    //         ssml: false,
+    //         input: responseFromOpenAI, //send the openAIResponse to D-id
+    //       },
+    //       config: {
+    //         fluent: true,
+    //         pad_audio: 0,
+    //         driver_expressions: {
+    //           expressions: [
+    //             { expression: "neutral", start_frame: 0, intensity: 0 },
+    //           ],
+    //           transition_frames: 0,
+    //         },
+    //         align_driver: true,
+    //         align_expand_factor: 0,
+    //         auto_match: true,
+    //         motion_factor: 0,
+    //         normalization_factor: 0,
+    //         sharpen: true,
+    //         stitch: true,
+    //         result_format: "mp4",
+    //       },
+    //       driver_url: "bank://lively/",
+    //       config: {
+    //         stitch: true,
+    //       },
+    //       session_id: sessionId,
+    //     }),
+    //   }
+    // );
   }
 };
 
