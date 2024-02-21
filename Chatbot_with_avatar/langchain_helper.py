@@ -11,6 +11,7 @@ from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain_community.document_loaders import TextLoader
 
 
 load_dotenv()
@@ -35,12 +36,17 @@ class langchian_helper:
         self.chat_history = [
             AIMessage(content="Hello, I am a bot. How can I help you?"),
         ]
+        self.doc_path = ".\Kranthi.txt"
         self.vector_store = None
 
-    def get_vectorstore_from_url(self, url):
+    def get_vectorstore_from_url(self, url, doc_path):
         # get the text in document form
         loader = WebBaseLoader(url)
         document = loader.load()
+
+        text_loader = TextLoader(doc_path, encoding="UTF-8")
+        text_documents = text_loader.load()
+        document.extend(text_documents)
 
         # split the document into chunks
         text_splitter = RecursiveCharacterTextSplitter()
@@ -111,7 +117,7 @@ class langchian_helper:
 
     def return_response(self, user_query):
         if self.vector_store == None:
-            vector_store = self.get_vectorstore_from_url(self.url_list)
+            vector_store = self.get_vectorstore_from_url(self.url_list, self.doc_path)
 
         if user_query is not None and user_query != "":
             response = self.get_response(user_query, vector_store, self.chat_history)

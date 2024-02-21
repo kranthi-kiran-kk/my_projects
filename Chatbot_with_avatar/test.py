@@ -7,7 +7,8 @@ fileObj = open("data.obj", "rb")
 chat = pickle.load(fileObj)
 fileObj.close()
 
-answer = chat.return_response("Who is the ceo of Tesla")
+answer = chat.return_response("who is the ceo of tesla")
+# answer = chat.return_response("can you tell me something about Kranthi")
 print(answer)
 print(chat.chat_history)
 
