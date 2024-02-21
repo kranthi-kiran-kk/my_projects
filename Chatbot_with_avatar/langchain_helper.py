@@ -20,7 +20,19 @@ class langchian_helper:
 
     def __init__(self) -> None:
 
-        self.url_list = ["https://hush1one.com/", "https://hush1one.com/about/"]
+        self.url_list = [
+            "https://hush1one.com/",
+            "https://hush1one.com/about/",
+            "https://sites.google.com/hush1one.com/drops",
+            "https://sites.google.com/hush1one.com/drops/key-demos",
+            "https://docs.google.com/document/d/1J0rlJIqrm8BftlzavJe1MiJ9G_5GOTi1s02o7svQplM/edit",
+            "https://sites.google.com/hush1one.com/drops/products/app",
+            "https://sites.google.com/hush1one.com/drops/products/developer-api",
+            "https://sites.google.com/hush1one.com/drops/products/hushh-button",
+            "https://sites.google.com/hush1one.com/drops/uiux",
+            "https://sites.google.com/hush1one.com/drops/mlds",
+            "https://github.com/unifyai/ivy/blob/main/README.md",
+        ]
         self.chat_history = [
             AIMessage(content="Hello, I am a bot. How can I help you?"),
         ]
@@ -116,16 +128,3 @@ def create_pickle_file():
         fileObj = open("data.obj", "wb")
         pickle.dump(chat, fileObj)
         fileObj.close()
-
-
-# class chat_object:
-#     def __init__(self) -> None:
-#         self.chat = langchian_helper()
-#         self.pickled_chat = pickle.dumps(self.chat)
-
-#     def chat_response(self,user_query):
-#         serialized_chat = self.pickled_chat
-#         chat = pickle.loads(serialized_chat)
-#         answer = chat.return_response(user_query)
-#         self.picked_chat = pickle.dumps(chat)
-#         return answer, chat.chat_history

@@ -202,53 +202,53 @@ talkButton.onclick = async () => {
     conversation.appendChild(message);
     message.scrollIntoView({ behavior: "smooth" });
 
-    const DID_API = await fetchApiData();
+    // const DID_API = await fetchApiData();
 
-    const talkResponse = await fetch(
-      `${DID_API.url}/talks/streams/${streamId}`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Basic ${DID_API.key}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          script: {
-            type: "text",
-            subtitles: "false",
-            provider: {
-              type: "microsoft",
-              voice_id: "en-US-AmberNeural",
-            },
-            ssml: false,
-            input: responseFromLangchain //responseFromOpenAI, //send the openAIResponse to D-id
-          },
-          config: {
-            fluent: true,
-            pad_audio: 0,
-            driver_expressions: {
-              expressions: [
-                { expression: "neutral", start_frame: 0, intensity: 0 },
-              ],
-              transition_frames: 0,
-            },
-            align_driver: true,
-            align_expand_factor: 0,
-            auto_match: true,
-            motion_factor: 0,
-            normalization_factor: 0,
-            sharpen: true,
-            stitch: true,
-            result_format: "mp4",
-          },
-          driver_url: "bank://lively/",
-          config: {
-            stitch: true,
-          },
-          session_id: sessionId,
-        }),
-      }
-    );
+    // const talkResponse = await fetch(
+    //   `${DID_API.url}/talks/streams/${streamId}`,
+    //   {
+    //     method: "POST",
+    //     headers: {
+    //       Authorization: `Basic ${DID_API.key}`,
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       script: {
+    //         type: "text",
+    //         subtitles: "false",
+    //         provider: {
+    //           type: "microsoft",
+    //           voice_id: "en-US-AmberNeural",
+    //         },
+    //         ssml: false,
+    //         input: responseFromLangchain //responseFromOpenAI, //send the openAIResponse to D-id
+    //       },
+    //       config: {
+    //         fluent: true,
+    //         pad_audio: 0,
+    //         driver_expressions: {
+    //           expressions: [
+    //             { expression: "neutral", start_frame: 0, intensity: 0 },
+    //           ],
+    //           transition_frames: 0,
+    //         },
+    //         align_driver: true,
+    //         align_expand_factor: 0,
+    //         auto_match: true,
+    //         motion_factor: 0,
+    //         normalization_factor: 0,
+    //         sharpen: true,
+    //         stitch: true,
+    //         result_format: "mp4",
+    //       },
+    //       driver_url: "bank://lively/",
+    //       config: {
+    //         stitch: true,
+    //       },
+    //       session_id: sessionId,
+    //     }),
+    //   }
+    // );
   }
 };
 
