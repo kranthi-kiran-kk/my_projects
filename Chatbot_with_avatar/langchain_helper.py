@@ -31,7 +31,6 @@ class langchian_helper:
             "https://sites.google.com/hush1one.com/drops/products/hushh-button",
             "https://sites.google.com/hush1one.com/drops/uiux",
             "https://sites.google.com/hush1one.com/drops/mlds",
-            "https://github.com/unifyai/ivy/blob/main/README.md",
         ]
         self.chat_history = [
             AIMessage(content="Hello, I am a bot. How can I help you?"),
